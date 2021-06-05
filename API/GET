@@ -1,0 +1,10 @@
+#!/usr/bin/env tarantool
+
+json = require('json')
+client = require('http.client').new()
+print('doing GET request with key='..tostring(arg[1]))
+
+response = client:request("GET", 'localhost:3301/kv/'..tostring(arg[1]), nil)
+
+print('response status -> '..response.status)
+print('response body -> '..response.body)

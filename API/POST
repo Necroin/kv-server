@@ -1,0 +1,12 @@
+#!/usr/bin/env tarantool
+
+json = require('json')
+client = require('http.client').new()
+print('doing POST request with key='..tostring(arg[1])..' value='..tostring(arg[2]))
+
+local data = {key=arg[1], value=arg[2]}
+
+response = client:request("POST", 'localhost:3301/kv', json.encode(data))
+
+print('response status -> '..response.status)
+print('response body -> '..response.body)
