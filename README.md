@@ -1,7 +1,7 @@
 ## API
-Path | Method | Body (json) | Description
+Method | Path | Body (json) | Description
 --- | --- | --- | --- 
-/kv | POST | ```{"key": "key_name", "value": object } ``` | Add a new record if key wasn't in the database
-/kv/:key | PUT | ```{ "value": object } ``` | Update record if the key was in the database
-/kv/:key | GET |  | Select record by key and return result
-/kv/:key | DELETE | | Delete record if key was in the database
+POST   | /kv      | ```{"key": "key_name", "value": object } ``` | Add a new record if key wasn't in the database
+PUT    | /kv/{id} | ```{ "value": object } ``` | Update record if the key was in the database
+GET    | /kv/{id} |  | Select record by key and return result
+DELETE | /kv/{id} |  | Delete record if key was in the database
